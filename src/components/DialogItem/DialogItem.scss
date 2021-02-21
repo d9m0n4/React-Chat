@@ -1,0 +1,93 @@
+@import '../../styles/_vars';
+.dialogs {
+  width: 300px;
+  &__item {
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    $item: &;
+    &-avatar {
+      position: relative;
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    &--online {
+      #{$item}-avatar {
+        &::before {
+          content: '';
+          background: $green;
+          border-radius: 30px;
+          width: 13px;
+          height: 13px;
+          border: 3px solid #ffffff;
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+      &-top {
+        display: flex;
+        b {
+          margin-bottom: 8px;
+          flex: 1;
+          font-weight: 600;
+          font-size: 14px;
+        }
+        span {
+          opacity: 0.5;
+        }
+      }
+      &-bottom {
+        position: relative;
+        p {
+          opacity: 0.4;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          width: 180px;
+          height: 1.2em;
+          white-space: nowrap;
+        }
+        &-count {
+          background-color: #f46b6b;
+          color: #ffffff;
+          width: 18px;
+          height: 18px;
+          border-radius: 30px;
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          font-size: 11px;
+          text-align: center;
+          line-height: 17px;
+          font-weight: 600;
+        }
+        .message__icon-readed {
+          bottom: 0;
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+    &:hover,
+    &.active {
+      background-color: #f3f7ff;
+    }
+  }
+}

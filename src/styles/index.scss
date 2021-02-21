@@ -1,0 +1,39 @@
+@import 'antd/dist/antd.css';
+@import 'reset-css';
+@import 'layouts/chat';
+
+body,
+html,
+#root,
+.wrapper {
+  color: #202020;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100vh;
+}
+
+.anticon {
+  font-size: 22px;
+
+  cursor: pointer;
+}
+.ant-btn {
+  border: 0;
+  box-shadow: none;
+  color: #202020;
+  background-color: inherit;
+  opacity: 0.5;
+  &::after {
+    display: none;
+  }
+  &:hover {
+    opacity: 1;
+    color: #202020;
+  }
+}
